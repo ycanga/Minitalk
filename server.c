@@ -6,25 +6,48 @@
 /*   By: ycanga <ycanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 15:00:31 by ycanga            #+#    #+#             */
-/*   Updated: 2022/08/06 15:00:32 by ycanga           ###   ########.fr       */
+/*   Updated: 2022/08/11 16:58:16 by ycanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void *print(void)
+void set_bit(int x)
 {
-    printf("sinyal alındı!\n");
-    return NULL;
+    static int bit = 7;
+    static int set = 0;
+
+    set += x << bit;
+    if (bit == 0)
+    {
+        write(1, &set, 1);
+        bit = 7;
+        set = 0;
+    }
+    else
+        bit--;
+    
+}
+void sgl_catch(int x){
+    if (x == SIGUSR1)
+    {
+        set_bit(1);
+    }
+    else if (x == SIGUSR2)
+    {
+        set_bit(0);
+    }
+    
+    
 }
 
 int main()
 {
     int pid;
-
     pid = getpid();
-    printf("%d\n", pid);
-    signal(SIGUSR1, (void *)print);
+    printf("PID: %u\n", pid);
+    signal(SIGUSR1, sgl_catch);
+	signal(SIGUSR2, sgl_catch);
     while(1)
         pause();
 }
