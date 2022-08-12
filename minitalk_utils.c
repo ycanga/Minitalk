@@ -6,7 +6,7 @@
 /*   By: ycanga <ycanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:58:58 by ycanga            #+#    #+#             */
-/*   Updated: 2022/08/11 16:49:32 by ycanga           ###   ########.fr       */
+/*   Updated: 2022/08/12 00:20:09 by ycanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	ft_atoi(const char *str)
 			return (-1);
 		if (res * neg < -2147483648)
 			return (0);
-	}	
+	}
 	return (res * neg);
 }

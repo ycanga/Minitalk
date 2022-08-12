@@ -1,9 +1,9 @@
-SRCSERVER			= server.c	minitalk_utils.c
-SRCCLIENT			= client.c	minitalk_utils.c
+SRCSERVER			= ft_printf.c	server.c	minitalk_utils.c
+SRCCLIENT			= ft_printf.c	client.c	minitalk_utils.c
 
 CC				= gcc
 RM				= rm -f
-#CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror -I.
 
 OBJSERVER		= $(SRCSERVER:.c=.o)
 
@@ -16,10 +16,10 @@ all:			$(NAME)
 $(NAME): server client $(OBJSERVER) $(OBJSCLIENT)
 		
 server: 
-		$(CC) -o server $(SRCSERVER) 
+		$(CC) -o server $(SRCSERVER) $(CFLAGS)
 
 client: 
-		$(CC) -o client $(SRCCLIENT) 
+		$(CC) -o client $(SRCCLIENT) $(CFLAGS)
 
 clean:
 				$(RM) $(OBJSERVER) $(OBJSCLIENT)
