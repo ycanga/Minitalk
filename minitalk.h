@@ -6,7 +6,7 @@
 /*   By: ycanga <ycanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:22:51 by ycanga            #+#    #+#             */
-/*   Updated: 2022/08/12 00:11:23 by ycanga           ###   ########.fr       */
+/*   Updated: 2022/08/13 22:34:30 by ycanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define MINITALK_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <signal.h>
 

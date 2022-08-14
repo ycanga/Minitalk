@@ -6,11 +6,12 @@
 /*   By: ycanga <ycanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 15:00:33 by ycanga            #+#    #+#             */
-/*   Updated: 2022/08/12 09:56:13 by ycanga           ###   ########.fr       */
+/*   Updated: 2022/08/14 00:36:04 by ycanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+#include <stdio.h>
 
 void	ft_catch(pid_t pid, int c)
 {
@@ -22,7 +23,7 @@ void	ft_catch(pid_t pid, int c)
 	byte = 8;
 	msg = c;
 	while (byte--)
-	{
+	{		
 		if (msg / n)
 		{
 			msg -= n;
@@ -54,7 +55,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		ft_printf("Wrong !!!");
+		ft_printf("Error !!!");
 		return (0);
 	}
 }
